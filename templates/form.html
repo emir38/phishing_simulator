@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Welcome Page</title>
+  </head>
+  <body>
+    <h1> Welcome to the page </h1>
+    <p> Your Browser information has been recorded </p>
+    <pre> {{ user_info | tojson(indent=2) }}</pre>
+
+    <h2>Submit Form</h2>
+    <form action="/submit" method="post">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username">
+      <br>
+      <label for="password">Password:</label>
+      <input type "password" id="password" name="password">
+      <br>
+      <input type="submit" value"Submit">
+    </form>
+  </body>
+</html>
