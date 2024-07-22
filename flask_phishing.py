@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from flask import Flask, request
+from flask import Flask, request, render_template, jsonify
 from termcolor import colored
 
 app = Flask(__name__)
@@ -19,7 +19,7 @@ def index():
     with open('click_log.txt', 'a') as f:
         f.write(f"{user_info}")
 
-    return "This was a phishing simulation. Your click has been logged."
+    return render_template("form.html", user_info=user_info)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
